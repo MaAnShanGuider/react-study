@@ -5,7 +5,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     devtool: "source-map",
     entry: {
-        index: path.join(__dirname, "src/第一个_02.js")
+        index: path.join(__dirname, "src/react-父传子.js")
     }, //已多次提及的唯一入口文件
     output: {
         path: path.join(__dirname, "dist"), //打包后的文件存放的地方

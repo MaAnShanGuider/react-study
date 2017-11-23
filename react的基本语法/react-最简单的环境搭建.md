@@ -139,3 +139,92 @@ src里用来放我们将要写的react的js文件。
 	</body>
 	</html>
 ```
+
+**接下来就可以在src文件夹下写react的js文件了。**
+
+比如:第一个.js
+
+
+```
+  var React = require('react'); //----a段代码
+  var ReactDom = require('react-dom');
+
+  var Child = React.createClass({
+  			render(){
+  				return 
+  					<div>张学友</div>
+  			}
+  	})
+
+  ReactDom.render(<Child></Child>,document.getElementById('box'))
+```
+
+上面是最简单的react代码，最为重要的地方就是a段代码那里，也就是导入必须是导入成这样，这是固定的。即`var React = require('react')`与`var ReactDom = require('react-dom')`
+
+1. React,首字母必须大写。
+2. 组件变量,首字母必须大写。
+3. 
+```render(){
+		return (
+			<div>模板可以被小括号包裹</div>
+			)
+		}
+```
+
+4. 组件可以嵌套
+```
+	var Bigbrother = React.createClass({
+			render(){
+				return (
+					<div>
+					<div>我是大兄弟</div
+					<Smallbrother></Smallbrother>
+					</div>
+					
+					)
+			}
+		})
+
+	var Smallbrother = React.createClass({
+			render(){
+				return (
+					<div>我是小兄弟</div>
+					)
+			}
+		})
+```
+
+5. return返回的内容的最外层必须要有个根标签。不能有同辈标签。这个根标签可以是我们自定义的组件标签。
+
+```
+		var React = require('react');
+		var reactDom = require('react-dom');
+
+		var Bigbrother = React.createClass({
+			render() {
+				return (
+					<div>
+						<div>我是大兄弟</div>
+						<Smallbrother></Smallbrother>
+					</div> 
+
+				)
+			}
+		})
+
+		var Smallbrother = React.createClass({
+			render() {
+				return (
+					<div>我是小兄弟</div>
+				)
+			}
+		})
+		var Child = React.createClass({
+			render() {
+				return <Bigbrother>
+				</Bigbrother>
+			}
+		})
+
+		reactDom.render(<Child></Child>, document.getElementById('box'));
+```
