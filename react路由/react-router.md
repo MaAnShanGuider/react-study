@@ -58,11 +58,13 @@ RR4 本次采用单代码仓库模型架构（monorepo），这意味者这个�
 
 -----------
 
-#### HashRouter,BrowsserRouter:
+#### HashRouter,BrowserRouter:
 
 这两个放到一起讲,作用是包裹那些路由标签，。。区别在于,HashRouter在浏览器的地址栏上会多出一个`/#`,并且HashRouter不支持 `location.key`和 `location.state`。
 
 这两个相当于vue中的`<Router-View></Router-View>`。
+
+**不能用自己写的组件包裹BrowserRouter组件，但是原生标签，和Provider可以包裹它。**
 
  组件支持的属性:
 1. **basename: string**
@@ -114,7 +116,7 @@ const supportsHistory = 'pushState' in window.history
 
 作用：渲染唯一子元素。
 
-使用场景：作为一个 Reac t组件，天生自带 children 属性。
+使用场景：作为一个 React组件，天生自带 children 属性。
 
 --------
 
@@ -172,6 +174,7 @@ const User = ({ match }) => {
 	      <Link to={to} {...rest} />
 	    </li>
 	  )}
+	  </Route>
 	)
 ```
 

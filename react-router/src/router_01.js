@@ -20,7 +20,7 @@ class Child extends Component{
 
 		return (
 			<div>
-				<div>我操你妈</div>
+				<div>我aa</div>
 				
 			<Router keyLength={12}>
 					

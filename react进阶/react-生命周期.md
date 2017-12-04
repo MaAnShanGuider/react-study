@@ -5,7 +5,7 @@
 #### 组件在初始化的时候会一次触发这五个钩子函数:
 1. getDefaultProps
 
- > 在使用es6的class语法时是没有这个钩子函数的，可以直接在constructor中定义this.dufaultProps设置组件的默认属性。
+ > 在使用es6的class语法时是没有这个钩子函数的，可以直接在constructor中定义this.defaultProps设置组件的默认属性。
 
 2. getInitialState
 

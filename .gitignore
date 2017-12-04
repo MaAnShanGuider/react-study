@@ -1,3 +1,4 @@
-/react-demo/node_modules/*
+﻿/react-demo/node_modules/*
 /react-进阶demo/node_modules/*
 /react-router/node_modules/*
+/react-redux_demo/node_modules/*
